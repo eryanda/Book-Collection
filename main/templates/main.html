@@ -1,8 +1,29 @@
-<h1>Book Collection Page</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Collection Page</title>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center; color: rgb(43, 0, 255);">Book Collection Page</h1>
+    </header>
+    <div style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #0066ffc1; border-radius: 5px; box-shadow: 0 0 10px rgb(238, 255, 0);">
+        <h3>Object Name:</h3>
+        <p style="color: rgb(255, 255, 255);">{{ name }}</p>
+        <h3>Title:</h3>
+        <p style="color: rgb(255, 255, 255);">{{ title }}</p>
+        <h3>Amount:</h3>
+        <p style="color: rgb(255, 255, 255);">{{ amount }}</p>
+        <h3>Description:</h3>
+        <p style="color: rgb(255, 255, 255);">{{ description }}</p>
+        
+        <!-- Menambahkan gambar -->
+    </div>
+    <div>
+        <img src="orang baca buku.jpg" alt="Deskripsi Gambar" style="max-width: 100%; height: auto;">
+    </div>
 
-<h5>Name: </h5>
-<p>{{ name }}</p> 
-<h5>Amount: </h5>
-<p>{{ amount }}</p> 
-<h5>Description: </h5>
-<p>{{ description }}</p> 
+</body>
+</html>
