@@ -94,20 +94,22 @@ Membuat sebuah README.md yang berisi tautan menuju aplikasi Adaptable yang sudah
 Berikut adalah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya:
 
 sequenceDiagram
-    - Client ->> Server: HTTP request
-    - Server ->> urls.py: Mengambil URL yang sesuai dengan request
-    - urls.py ->> views.py: Menjalankan fungsi view yang sesuai
-    - views.py ->> models.py: Mengakses data dari model
-    - views.py ->> berkas html: Menghasilkan output HTML
-    - Server ->> Client: HTTP response
+
+Client ->> Server: HTTP request
+Server ->> urls.py: Mengambil URL yang sesuai dengan request
+urls.py ->> views.py: Menjalankan fungsi view yang sesuai
+views.py ->> models.py: Mengakses data dari model
+views.py ->> berkas html: Menghasilkan output HTML
+Server ->> Client: HTTP response
 
    Penjelasan:
-      1  Client mengirimkan request HTTP ke server
-      2  Server mengambil URL yang sesuai dengan request
-      3  Server menjalankan fungsi view yang sesuai dengan URL
-      4  Fungsi view mengakses data dari model
-      5  Fungsi view menghasilkan output HTML
-      6  Server mengirimkan response HTTP ke client
+
+1. Client mengirimkan request HTTP ke server
+2. Server mengambil URL yang sesuai dengan request
+3. Server menjalankan fungsi view yang sesuai dengan URL
+4. Fungsi view mengakses data dari model
+5. Fungsi view menghasilkan output HTML
+6. Server mengirimkan response HTTP ke client
 
 Berikut adalah penjelasan lebih lanjut tentang keterkaitan antara urls.py, views.py, models.py, dan berkas HTML:
 
