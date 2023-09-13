@@ -23,6 +23,4 @@ urlpatterns = [
     path('main/', include('main.urls')),
 ]
 
-from django.contrib import admin
-from django.urls import include, path
 
