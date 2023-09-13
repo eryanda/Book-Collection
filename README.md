@@ -95,12 +95,12 @@ Berikut adalah bagan yang berisi request client ke web aplikasi berbasis Django 
 
 sequenceDiagram
 
-Client ->> Server: HTTP request
-Server ->> urls.py: Mengambil URL yang sesuai dengan request
-urls.py ->> views.py: Menjalankan fungsi view yang sesuai
-views.py ->> models.py: Mengakses data dari model
-views.py ->> berkas html: Menghasilkan output HTML
-Server ->> Client: HTTP response
+- Client ->> Server: HTTP request
+- Server ->> urls.py: Mengambil URL yang sesuai dengan request
+- urls.py ->> views.py: Menjalankan fungsi view yang sesuai
+- views.py ->> models.py: Mengakses data dari model
+- views.py ->> berkas html: Menghasilkan output HTML
+- Server ->> Client: HTTP response
 
    Penjelasan:
 
