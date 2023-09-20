@@ -151,24 +151,116 @@ Checklist untuk tugas ini adalah sebagai berikut:
 
  v Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2.
 
-   Menjawab beberapa pertanyaan berikut pada README.md pada root folder.
+ v Menjawab beberapa pertanyaan berikut pada README.md pada root folder.
+
    1. Apa perbedaan antara form POST dan form GET dalam Django?
 
-      - **POST**: Metode ini digunakan untuk mengirimkan data secara langsung ke file lain. Data yang dikirimkan melalui metode ini biasanya bersifat penting atau rahasia, seperti kata sandi¹³. Data yang dikirimkan tidak ditampilkan pada URL³.
+      - **POST**: Metode ini digunakan untuk mengirimkan data secara langsung ke file lain. Data yang dikirimkan melalui metode ini biasanya bersifat penting atau rahasia, seperti kata sandi. Data yang dikirimkan tidak ditampilkan pada URL.
 
-      - **GET**: Metode ini mengirimkan data secara tidak langsung. Data yang dikirimkan melalui metode ini akan ditampilkan pada URL dan dapat dilihat oleh orang lain³. Metode ini biasanya digunakan untuk mengirimkan data yang tidak bersifat penting³.
+      - **GET**: Metode ini mengirimkan data secara tidak langsung. Data yang dikirimkan melalui metode ini akan ditampilkan pada URL dan dapat dilihat oleh orang lain. Metode ini biasanya digunakan untuk mengirimkan data yang tidak bersifat penting.
 
    Source:
-   (1) Perbedaan Method POST dan GET Beserta Fungsinya - Makinrajin. https://makinrajin.com/blog/perbedaan-post-dan-get/.
-   (2) Working with forms | Django documentation | Django. https://docs.djangoproject.com/en/4.2/topics/forms/.
-   (3) Form Validasi dan Perbedaan antara Method POST dan GET. https://iyazsyafitri.wordpress.com/2019/06/28/form-validasi-dan-perbedaan-antara-method-post-dan-get/.
-   (4) http - get vs post Django forms - Stack Overflow. https://stackoverflow.com/questions/15017339/get-vs-post-django-forms.
-   (5) Penjelasan Singkat tentang POST & GET Django · GitHub. https://gist.github.com/rririanto/442f0590578ca3f8648aeba1e25f8762.
+
+(1) Perbedaan Method POST dan GET Beserta Fungsinya - Makinrajin. https://makinrajin.com/blog/perbedaan-post-dan-get/.
+(2) Working with forms | Django documentation | Django. https://docs.djangoproject.com/en/4.2/topics/forms/.
+(3) Form Validasi dan Perbedaan antara Method POST dan GET. https://iyazsyafitri.wordpress.com/2019/06/28/form-validasi-dan-perbedaan-antara-method-post-dan-get/.
+(4) http - get vs post Django forms - Stack Overflow. https://stackoverflow.com/questions/15017339/get-vs-post-django-forms.
+(5) Penjelasan Singkat tentang POST & GET Django · GitHub. https://gist.github.com/rririanto/442f0590578ca3f8648aeba1e25f8762.
 
    2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+
+      - **XML**: XML (Extensible Markup Language) adalah format data yang fleksibel dan digunakan untuk mengelola dan menyimpan data. XML menggunakan struktur pohon dalam membentuk datanya dengan menggunakan tag dan atribut. XML memisahkan data dari HTML dan dapat digunakan dalam berbagai bahasa pemrograman seperti Java, Python, atau C. XML juga digunakan dalam web service, message passing, dan pembuatan dokumen¹.
+
+      - **JSON**: JSON (JavaScript Object Notation) adalah format data yang ringan dan mudah dipahami oleh mesin dan manusia. JSON menggunakan struktur data yang mirip dengan objek-objek JavaScript. JSON biasanya digunakan dalam aplikasi web dan mobile untuk mengirim data dari server ke client. JSON mendukung semua browser dan sebagian besar teknologi backend mendukung JSON.
+
+      - **HTML**: HTML (Hypertext Markup Language) adalah bahasa markup yang paling populer digunakan untuk membuat halaman web. HTML digunakan untuk membuat struktur dan tampilan halaman web. HTML tidak digunakan untuk mengelola atau menyimpan data.
+
+   Source:
+
+(1) Perbedaan JSON dan XML: Mana yang Lebih Baik?. https://www.localstartupfest.id/faq/perbedaan-json-dan-xml/.
+(2) Micro Services – Just another WordPress site. http://snabdi.lppm.unila.ac.id/perbedaan/json-xml.htm.
+(3) Perbedaan XML dan HTML: Apa yang Perlu Anda Ketahui. https://www.localstartupfest.id/faq/perbedaan-xml-dan-html/.
+(4) JSON vs XML - Perbedaan Antara Berbagai Representasi Data - AWS. https://aws.amazon.com/id/compare/the-difference-between-json-xml/.
 
    3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
 
    4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
+   v Membuat input form untuk menambahkan objek model pada app sebelumnya.
+
+      - Membuat berkas baru pada direktori main dengan nama forms.py untuk membuat struktur form yang dapat menerima data produk baru. Kemudian menambahkan kode berikut.
+      ```python
+      from django.forms import ModelForm
+      from main.models import Product
+
+      class ProductForm(ModelForm):
+         class Meta:
+            model = Product
+            fields = ["genre", "title", "amount" ,"description"]
+
+      ```
+   v Tambahkan 5 fungsi views untuk melihat objek yang sudah ditambahkan dalam format HTML, XML, JSON, XML by ID, dan JSON by ID.
+
+      - Menambahkan 5 kode fungsi di bawah ini pada berkas views.py 
+
+      ```python
+
+      #HTML
+      def show_main(request):        
+         products = Product.objects.all()
+         context = {
+            'name': 'Eryanda Arian Rouuf',
+            'class' : "PBP B",
+            'products': products,
+         }
+         return render(request, "main.html", context)
+
+      #XML
+      def show_xml(request):
+         data = Product.objects.all()
+         return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
+
+      #JSON
+      def show_json(request):
+         data = Product.objects.all()
+         return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+      #XML by id
+      def show_xml_by_id(request, id):
+         data = Product.objects.filter(pk=id)
+         return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
+
+      #JSON by id
+      def show_json_by_id(request, id):
+         data = Product.objects.filter(pk=id)
+         return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+      ```
+
+      v Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2
+
+      - Mengimport kode di bawah ini terlebih dulu sebelum melakukan routing URL
+
+      ```python
+
+      from main.views import show_main, create_product, show_xml, show_json, show_xml_by_id, show_json_by_id 
+
+      ```
+      - Kemudian membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2 tadi
+
+      ```python
+
+      urlpatterns = [
+      path('', show_main, name='show_main'),
+      path('xml/', show_xml, name='show_xml'),
+      path('json/', show_json, name='show_json'),
+      path('xml/<int:id>/', show_xml_by_id, name='show_xml_by_id'),
+      path('json/<int:id>/', show_json_by_id, name='show_json_by_id'), 
+      ]
+
+      ```
+
    5. Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
+
+
+   
