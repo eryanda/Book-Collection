@@ -1,3 +1,5 @@
+TUGAS 2
+
 Membuat sebuah README.md yang berisi tautan menuju aplikasi Adaptable yang sudah di-deploy, serta jawaban dari beberapa pertanyaan berikut.
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
@@ -44,7 +46,7 @@ Membuat sebuah README.md yang berisi tautan menuju aplikasi Adaptable yang sudah
    ```python
     class Product(models.Model):
         name = models.CharField(max_length=255)
-        title = models.CharField(max_length=255, default="Title")
+        title = models.CharField(max_length=255)
         amount = models.IntegerField()
         description = models.TextField()
    ```
@@ -137,3 +139,36 @@ Dalam bagan tersebut, kita dapat melihat bahwa urls.py adalah titik awal dari re
 - MVT adalah varian dari pola MVC. Dalam pola ini, view juga bertanggung jawab untuk menangani input dari pengguna. View kemudian menggunakan model untuk memproses input tersebut dan menghasilkan output.
 - MVVM adalah varian dari pola MVC yang lebih modern. Dalam pola ini, view dan model tidak berinteraksi langsung satu sama lain. View berinteraksi dengan view model, yang kemudian berinteraksi dengan model. Hal ini memungkinkan view untuk tetap terpisah dari model, sehingga view dapat lebih mudah diuji dan dirawat.
 - Perbedaan di antara ketiganya terletak pada interaksi antara view dan model. Dalam MVC, view dan model berinteraksi langsung satu sama lain. Dalam MVT, view juga bertanggung jawab untuk menangani input dari pengguna. Dalam MVVM, view dan model tidak berinteraksi langsung satu sama lain, melainkan melalui view model.
+
+
+TUGAS 3
+
+Checklist untuk tugas ini adalah sebagai berikut:
+
+ v Membuat input form untuk menambahkan objek model pada app sebelumnya.
+
+ v Tambahkan 5 fungsi views untuk melihat objek yang sudah ditambahkan dalam format HTML, XML, JSON, XML by ID, dan JSON by ID.
+
+ v Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2.
+
+   Menjawab beberapa pertanyaan berikut pada README.md pada root folder.
+   1. Apa perbedaan antara form POST dan form GET dalam Django?
+
+      - **POST**: Metode ini digunakan untuk mengirimkan data secara langsung ke file lain. Data yang dikirimkan melalui metode ini biasanya bersifat penting atau rahasia, seperti kata sandi¹³. Data yang dikirimkan tidak ditampilkan pada URL³.
+
+      - **GET**: Metode ini mengirimkan data secara tidak langsung. Data yang dikirimkan melalui metode ini akan ditampilkan pada URL dan dapat dilihat oleh orang lain³. Metode ini biasanya digunakan untuk mengirimkan data yang tidak bersifat penting³.
+
+   Source:
+   (1) Perbedaan Method POST dan GET Beserta Fungsinya - Makinrajin. https://makinrajin.com/blog/perbedaan-post-dan-get/.
+   (2) Working with forms | Django documentation | Django. https://docs.djangoproject.com/en/4.2/topics/forms/.
+   (3) Form Validasi dan Perbedaan antara Method POST dan GET. https://iyazsyafitri.wordpress.com/2019/06/28/form-validasi-dan-perbedaan-antara-method-post-dan-get/.
+   (4) http - get vs post Django forms - Stack Overflow. https://stackoverflow.com/questions/15017339/get-vs-post-django-forms.
+   (5) Penjelasan Singkat tentang POST & GET Django · GitHub. https://gist.github.com/rririanto/442f0590578ca3f8648aeba1e25f8762.
+
+   2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+
+   3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
+
+   4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+   5. Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
