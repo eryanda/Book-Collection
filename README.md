@@ -153,13 +153,13 @@ Checklist untuk tugas ini adalah sebagai berikut:
 
  v Menjawab beberapa pertanyaan berikut pada README.md pada root folder.
 
-   1. Apa perbedaan antara form POST dan form GET dalam Django?
+1. Apa perbedaan antara form POST dan form GET dalam Django?
 
       - **POST**: Metode ini digunakan untuk mengirimkan data secara langsung ke file lain. Data yang dikirimkan melalui metode ini biasanya bersifat penting atau rahasia, seperti kata sandi. Data yang dikirimkan tidak ditampilkan pada URL.
 
       - **GET**: Metode ini mengirimkan data secara tidak langsung. Data yang dikirimkan melalui metode ini akan ditampilkan pada URL dan dapat dilihat oleh orang lain. Metode ini biasanya digunakan untuk mengirimkan data yang tidak bersifat penting.
 
-   2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
 
       - **XML**: XML (Extensible Markup Language) adalah format data yang fleksibel dan digunakan untuk mengelola dan menyimpan data. XML menggunakan struktur pohon dalam membentuk datanya dengan menggunakan tag dan atribut. XML memisahkan data dari HTML dan dapat digunakan dalam berbagai bahasa pemrograman seperti Java, Python, atau C. XML juga digunakan dalam web service, message passing, dan pembuatan dokumen¹.
 
@@ -167,21 +167,21 @@ Checklist untuk tugas ini adalah sebagai berikut:
 
       - **HTML**: HTML (Hypertext Markup Language) adalah bahasa markup yang paling populer digunakan untuk membuat halaman web. HTML digunakan untuk membuat struktur dan tampilan halaman web. HTML tidak digunakan untuk mengelola atau menyimpan data.
 
-   3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
+3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
 
 JSON sering digunakan dalam pertukaran data antara aplikasi web modern karena beberapa alasan berikut:
 
-1. **Ringan**: JSON adalah format data yang ringan dan mudah dipahami oleh mesin dan manusia. Hal ini memungkinkan data dikirim dengan cepat dan efisien melalui jaringan.
+   "1. **Ringan**: JSON adalah format data yang ringan dan mudah dipahami oleh mesin dan manusia. Hal ini memungkinkan data dikirim dengan cepat dan efisien melalui jaringan.
 
-2. **Mudah Diproses**: JSON menggunakan struktur data yang mirip dengan objek-objek JavaScript. Ini membuatnya mudah diproses dan dimanipulasi menggunakan JavaScript atau bahasa pemrograman lainnya.
+   2. **Mudah Diproses**: JSON menggunakan struktur data yang mirip dengan objek-objek JavaScript. Ini membuatnya mudah diproses dan dimanipulasi menggunakan JavaScript atau bahasa pemrograman lainnya.
 
-3. **Kompatibilitas**: JSON didukung oleh semua browser modern dan sebagian besar teknologi backend. Ini membuatnya menjadi pilihan yang baik untuk pertukaran data antara aplikasi web yang berbeda.
+   3. **Kompatibilitas**: JSON didukung oleh semua browser modern dan sebagian besar teknologi backend. Ini membuatnya menjadi pilihan yang baik untuk pertukaran data antara aplikasi web yang berbeda.
 
-4. **Pemahaman Manusia**: JSON menggunakan struktur data yang mirip dengan objek-objek JavaScript, sehingga mudah dipahami oleh pengembang. Ini memudahkan pengembang untuk membaca dan memahami data yang dikirim dan diterima oleh aplikasi web.
+   4. **Pemahaman Manusia**: JSON menggunakan struktur data yang mirip dengan objek-objek JavaScript, sehingga mudah dipahami oleh pengembang. Ini memudahkan pengembang untuk membaca dan memahami data yang dikirim dan diterima oleh aplikasi web.
 
-5. **Fleksibilitas**: JSON dapat digunakan untuk mengirim data yang kompleks dan terstruktur. Ini memungkinkan pengembang untuk mengirim data yang lebih kompleks daripada format data lainnya seperti XML atau HTML.
+   5. **Fleksibilitas**: JSON dapat digunakan untuk mengirim data yang kompleks dan terstruktur. Ini memungkinkan pengembang untuk mengirim data yang lebih kompleks daripada format data lainnya seperti XML atau HTML."
 
-   4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
    v Membuat input form untuk menambahkan objek model pada app sebelumnya.
 
@@ -258,7 +258,10 @@ JSON sering digunakan dalam pertukaran data antara aplikasi web modern karena be
 
       ```
 
-   5. Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
+5. Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
 
-
-
+   ![alt text](https://github.com/eryanda/Book-Collection/blob/main/Pict/html.png?raw=true)
+   ![alt text](https://github.com/eryanda/Book-Collection/blob/main/Pict/json.png?raw=true)
+   ![alt text](https://github.com/eryanda/Book-Collection/blob/main/Pict/json_by_id.png?raw=true)
+   ![alt text](https://github.com/eryanda/Book-Collection/blob/main/Pict/xml.png?raw=true)
+   ![alt text](https://github.com/eryanda/Book-Collection/blob/main/Pict/xml_by_id.png?raw=true)
