@@ -171,15 +171,15 @@ Checklist untuk tugas ini adalah sebagai berikut:
 
 JSON sering digunakan dalam pertukaran data antara aplikasi web modern karena beberapa alasan berikut:
 
-   "1. **Ringan**: JSON adalah format data yang ringan dan mudah dipahami oleh mesin dan manusia. Hal ini memungkinkan data dikirim dengan cepat dan efisien melalui jaringan.
+   - **Ringan**: JSON adalah format data yang ringan dan mudah dipahami oleh mesin dan manusia. Hal ini memungkinkan data dikirim dengan cepat dan efisien melalui jaringan.
 
-   2. **Mudah Diproses**: JSON menggunakan struktur data yang mirip dengan objek-objek JavaScript. Ini membuatnya mudah diproses dan dimanipulasi menggunakan JavaScript atau bahasa pemrograman lainnya.
+   - **Mudah Diproses**: JSON menggunakan struktur data yang mirip dengan objek-objek JavaScript. Ini membuatnya mudah diproses dan dimanipulasi menggunakan JavaScript atau bahasa pemrograman lainnya.
 
-   3. **Kompatibilitas**: JSON didukung oleh semua browser modern dan sebagian besar teknologi backend. Ini membuatnya menjadi pilihan yang baik untuk pertukaran data antara aplikasi web yang berbeda.
+   - **Kompatibilitas**: JSON didukung oleh semua browser modern dan sebagian besar teknologi backend. Ini membuatnya menjadi pilihan yang baik untuk pertukaran data antara aplikasi web yang berbeda.
 
-   4. **Pemahaman Manusia**: JSON menggunakan struktur data yang mirip dengan objek-objek JavaScript, sehingga mudah dipahami oleh pengembang. Ini memudahkan pengembang untuk membaca dan memahami data yang dikirim dan diterima oleh aplikasi web.
+   - **Pemahaman Manusia**: JSON menggunakan struktur data yang mirip dengan objek-objek JavaScript, sehingga mudah dipahami oleh pengembang. Ini memudahkan pengembang untuk membaca dan memahami data yang dikirim dan diterima oleh aplikasi web.
 
-   5. **Fleksibilitas**: JSON dapat digunakan untuk mengirim data yang kompleks dan terstruktur. Ini memungkinkan pengembang untuk mengirim data yang lebih kompleks daripada format data lainnya seperti XML atau HTML."
+   - **Fleksibilitas**: JSON dapat digunakan untuk mengirim data yang kompleks dan terstruktur. Ini memungkinkan pengembang untuk mengirim data yang lebih kompleks daripada format data lainnya seperti XML atau HTML.
 
 4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
