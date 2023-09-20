@@ -159,14 +159,6 @@ Checklist untuk tugas ini adalah sebagai berikut:
 
       - **GET**: Metode ini mengirimkan data secara tidak langsung. Data yang dikirimkan melalui metode ini akan ditampilkan pada URL dan dapat dilihat oleh orang lain. Metode ini biasanya digunakan untuk mengirimkan data yang tidak bersifat penting.
 
-   Source:
-
-(1) Perbedaan Method POST dan GET Beserta Fungsinya - Makinrajin. https://makinrajin.com/blog/perbedaan-post-dan-get/.
-(2) Working with forms | Django documentation | Django. https://docs.djangoproject.com/en/4.2/topics/forms/.
-(3) Form Validasi dan Perbedaan antara Method POST dan GET. https://iyazsyafitri.wordpress.com/2019/06/28/form-validasi-dan-perbedaan-antara-method-post-dan-get/.
-(4) http - get vs post Django forms - Stack Overflow. https://stackoverflow.com/questions/15017339/get-vs-post-django-forms.
-(5) Penjelasan Singkat tentang POST & GET Django · GitHub. https://gist.github.com/rririanto/442f0590578ca3f8648aeba1e25f8762.
-
    2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
 
       - **XML**: XML (Extensible Markup Language) adalah format data yang fleksibel dan digunakan untuk mengelola dan menyimpan data. XML menggunakan struktur pohon dalam membentuk datanya dengan menggunakan tag dan atribut. XML memisahkan data dari HTML dan dapat digunakan dalam berbagai bahasa pemrograman seperti Java, Python, atau C. XML juga digunakan dalam web service, message passing, dan pembuatan dokumen¹.
@@ -175,20 +167,26 @@ Checklist untuk tugas ini adalah sebagai berikut:
 
       - **HTML**: HTML (Hypertext Markup Language) adalah bahasa markup yang paling populer digunakan untuk membuat halaman web. HTML digunakan untuk membuat struktur dan tampilan halaman web. HTML tidak digunakan untuk mengelola atau menyimpan data.
 
-   Source:
-
-(1) Perbedaan JSON dan XML: Mana yang Lebih Baik?. https://www.localstartupfest.id/faq/perbedaan-json-dan-xml/.
-(2) Micro Services – Just another WordPress site. http://snabdi.lppm.unila.ac.id/perbedaan/json-xml.htm.
-(3) Perbedaan XML dan HTML: Apa yang Perlu Anda Ketahui. https://www.localstartupfest.id/faq/perbedaan-xml-dan-html/.
-(4) JSON vs XML - Perbedaan Antara Berbagai Representasi Data - AWS. https://aws.amazon.com/id/compare/the-difference-between-json-xml/.
-
    3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
+
+JSON sering digunakan dalam pertukaran data antara aplikasi web modern karena beberapa alasan berikut:
+
+1. **Ringan**: JSON adalah format data yang ringan dan mudah dipahami oleh mesin dan manusia. Hal ini memungkinkan data dikirim dengan cepat dan efisien melalui jaringan.
+
+2. **Mudah Diproses**: JSON menggunakan struktur data yang mirip dengan objek-objek JavaScript. Ini membuatnya mudah diproses dan dimanipulasi menggunakan JavaScript atau bahasa pemrograman lainnya.
+
+3. **Kompatibilitas**: JSON didukung oleh semua browser modern dan sebagian besar teknologi backend. Ini membuatnya menjadi pilihan yang baik untuk pertukaran data antara aplikasi web yang berbeda.
+
+4. **Pemahaman Manusia**: JSON menggunakan struktur data yang mirip dengan objek-objek JavaScript, sehingga mudah dipahami oleh pengembang. Ini memudahkan pengembang untuk membaca dan memahami data yang dikirim dan diterima oleh aplikasi web.
+
+5. **Fleksibilitas**: JSON dapat digunakan untuk mengirim data yang kompleks dan terstruktur. Ini memungkinkan pengembang untuk mengirim data yang lebih kompleks daripada format data lainnya seperti XML atau HTML.
 
    4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
    v Membuat input form untuk menambahkan objek model pada app sebelumnya.
 
-      - Membuat berkas baru pada direktori main dengan nama forms.py untuk membuat struktur form yang dapat menerima data produk baru. Kemudian menambahkan kode berikut.
+   - Membuat berkas baru pada direktori main dengan nama forms.py untuk membuat struktur form yang dapat menerima data produk baru. Kemudian menambahkan kode berikut.
+
       ```python
       from django.forms import ModelForm
       from main.models import Product
@@ -201,7 +199,7 @@ Checklist untuk tugas ini adalah sebagai berikut:
       ```
    v Tambahkan 5 fungsi views untuk melihat objek yang sudah ditambahkan dalam format HTML, XML, JSON, XML by ID, dan JSON by ID.
 
-      - Menambahkan 5 kode fungsi di bawah ini pada berkas views.py 
+   - Menambahkan 5 kode fungsi di bawah ini pada berkas views.py 
 
       ```python
 
@@ -237,16 +235,16 @@ Checklist untuk tugas ini adalah sebagai berikut:
 
       ```
 
-      v Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2
+   v Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2
 
-      - Mengimport kode di bawah ini terlebih dulu sebelum melakukan routing URL
+   - Mengimport kode di bawah ini terlebih dulu sebelum melakukan routing URL
 
       ```python
 
       from main.views import show_main, create_product, show_xml, show_json, show_xml_by_id, show_json_by_id 
 
       ```
-      - Kemudian membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2 tadi
+   - Kemudian membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2 tadi
 
       ```python
 
@@ -263,4 +261,4 @@ Checklist untuk tugas ini adalah sebagai berikut:
    5. Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
 
 
-   
+
