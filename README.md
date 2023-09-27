@@ -1,4 +1,4 @@
-TUGAS 2
+**TUGAS 2**
 
 Membuat sebuah README.md yang berisi tautan menuju aplikasi Adaptable yang sudah di-deploy, serta jawaban dari beberapa pertanyaan berikut.
 
@@ -141,7 +141,7 @@ Dalam bagan tersebut, kita dapat melihat bahwa urls.py adalah titik awal dari re
 - Perbedaan di antara ketiganya terletak pada interaksi antara view dan model. Dalam MVC, view dan model berinteraksi langsung satu sama lain. Dalam MVT, view juga bertanggung jawab untuk menangani input dari pengguna. Dalam MVVM, view dan model tidak berinteraksi langsung satu sama lain, melainkan melalui view model.
 
 
-TUGAS 3
+**TUGAS 3**
 
 Checklist untuk tugas ini adalah sebagai berikut:
 
@@ -265,3 +265,161 @@ JSON sering digunakan dalam pertukaran data antara aplikasi web modern karena be
    ![alt text](https://github.com/eryanda/Book-Collection/blob/main/Pict/json_by_id.png?raw=true)
    ![alt text](https://github.com/eryanda/Book-Collection/blob/main/Pict/xml.png?raw=true)
    ![alt text](https://github.com/eryanda/Book-Collection/blob/main/Pict/xml_by_id.png?raw=true)
+
+
+**TUGAS 4**
+
+Checklist untuk tugas ini adalah sebagai berikut:
+
+ v Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar.
+
+ v Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun di lokal.
+
+ v Menghubungkan model Item dengan User.
+
+ v Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi.
+
+ Menjawab beberapa pertanyaan berikut pada README.md pada root folder (silakan modifikasi README.md yang telah kamu buat sebelumnya; tambahkan subjudul untuk setiap tugas).
+
+ 1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
+
+   - **Django UserCreationForm** adalah sebuah formulir yang disediakan oleh Django untuk memudahkan proses pembuatan pengguna baru dalam aplikasi web. Formulir ini memungkinkan pengguna untuk memasukkan informasi seperti nama pengguna dan kata sandi, serta memvalidasi input tersebut sebelum menyimpannya ke dalam basis data.
+
+   - Kelebihan dari **Django UserCreationForm** antara lain:
+
+   a. **Mudah digunakan**: Formulir ini telah disediakan oleh Django dan dapat digunakan langsung tanpa perlu menulis kode tambahan.
+
+   b. **Validasi otomatis**: Formulir ini secara otomatis memvalidasi input pengguna, seperti memastikan kata sandi yang dimasukkan cukup kuat dan memeriksa apakah nama pengguna sudah digunakan sebelumnya.
+
+   c. **Integrasi dengan Django**: Formulir ini terintegrasi dengan baik dengan fitur otentikasi dan otorisasi Django, sehingga memudahkan pengembangan aplikasi web yang aman dan terpercaya.
+
+   - Namun, **Django UserCreationForm** juga memiliki beberapa kekurangan, antara lain:
+
+   a. **Keterbatasan fungsionalitas**: Formulir ini hanya menyediakan fitur dasar untuk pembuatan pengguna baru. Jika Anda membutuhkan fungsionalitas tambahan, seperti mengumpulkan informasi tambahan dari pengguna, Anda perlu menyesuaikan formulir ini atau membuat formulir kustom.
+
+   b. **Tampilan bawaan yang sederhana**: Formulir ini tidak menyediakan tampilan yang sangat menarik secara default. Jika Anda menginginkan tampilan yang lebih menarik, Anda perlu menyesuaikan tampilan formulir menggunakan HTML dan CSS.
+
+ 2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
+
+   - Dalam konteks Django, **autentikasi** adalah proses untuk memverifikasi identitas pengguna yang mencoba mengakses sistem aplikasi. Autentikasi memastikan bahwa pengguna adalah siapa yang mereka klaim dan memungkinkan mereka untuk masuk ke dalam sistem. Di sisi lain, **otorisasi** adalah proses untuk menentukan apa yang pengguna diizinkan lakukan setelah mereka diautentikasi. Otorisasi memeriksa hak akses pengguna terhadap sumber daya atau fungsi tertentu dalam aplikasi.
+
+   - Kedua konsep ini penting dalam Django karena:
+
+   a. **Autentikasi** memastikan bahwa hanya pengguna yang sah yang dapat mengakses sistem. Ini membantu melindungi data dan mencegah akses yang tidak sah.
+
+   b. **Otorisasi** memastikan bahwa pengguna hanya dapat melakukan tindakan yang sesuai dengan peran dan izin mereka. Ini membantu menjaga keamanan dan integritas sistem dengan membatasi akses ke sumber daya yang sensitif.
+
+   - Dalam kombinasi, autentikasi dan otorisasi membantu menjaga keamanan dan privasi pengguna, serta mencegah penyalahgunaan dan kerusakan pada sistem aplikasi.
+
+ 3. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
+
+   - **Cookies** adalah file teks kecil yang disimpan pada komputer pengguna ketika mereka mengunjungi situs web. Cookies digunakan untuk menyimpan informasi tentang pengguna, seperti preferensi dan riwayat aktivitas, dan memungkinkan situs web untuk mengenali pengguna ketika mereka kembali ke situs tersebut. 
+
+   - Dalam konteks Django, cookies digunakan untuk mengelola data sesi pengguna. Django membuat dan menyimpan cookie sesi, mengirimkannya ke server saat pengguna berinteraksi dengan situs web, dan digunakan untuk mengidentifikasi dan menyimpan data sesi pengguna. Penggunaan cookies memungkinkan pengalaman pengguna yang lebih baik, meskipun harus memperhatikan masalah keamanan seperti serangan XSS.
+
+ 4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+
+   - Penggunaan cookies dalam pengembangan web memiliki beberapa risiko potensial yang harus diwaspadai. Beberapa risiko tersebut antara lain:
+
+      a. **Kerentanan terhadap serangan XSS**: Cookies dapat digunakan untuk menyimpan informasi sensitif, seperti token otentikasi, yang dapat digunakan oleh penyerang untuk melakukan serangan cross-site scripting (XSS).
+
+      b. **Pelacakan pengguna**: Cookies pihak ketiga dapat digunakan untuk melacak aktivitas pengguna di seluruh situs web dan melintasi domain.
+
+      c. **Pelanggaran privasi**: Cookies dapat digunakan untuk mengumpulkan informasi pribadi tentang pengguna, seperti preferensi dan riwayat aktivitas, yang dapat digunakan untuk tujuan yang tidak diinginkan.
+
+   - Namun, penggunaan cookies juga memiliki manfaat, seperti memungkinkan situs web untuk menyimpan preferensi pengguna dan menyediakan pengalaman yang disesuaikan. Untuk meminimalkan risiko, pengembang web harus memperhatikan praktik keamanan terbaik, seperti mengenkripsi data cookies dan membatasi penggunaan cookies pihak ketiga .
+
+ 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+ - Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar.
+
+   a. Menambahkan kode program di bawah ini pada berkas views.py di subdirektori main/templates
+
+   ```python
+
+   def register(request):
+    form = UserCreationForm()
+
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your account has been successfully created!')
+            return redirect('main:login')
+    context = {'form':form}
+    return render(request, 'register.html', context)
+
+   def login_user(request):
+      if request.method == 'POST':
+         username = request.POST.get('username')
+         password = request.POST.get('password')
+         user = authenticate(request, username=username, password=password)
+         if user is not None:
+               login(request, user)
+               response = HttpResponseRedirect(reverse("main:show_main")) 
+               response.set_cookie('last_login', str(datetime.datetime.now()))
+               return response
+         else:
+               messages.info(request, 'Lu salah masukin password sama username kawan')
+      context = {}
+      return render(request, 'login.html', context)
+
+   def logout_user(request):
+      logout(request)
+      response = HttpResponseRedirect(reverse('main:login'))
+      response.delete_cookie('last_login')
+      return response
+   
+   ```
+ - Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun di lokal.
+
+   ![alt text](https://github.com/eryanda/Book-Collection/blob/main/Pict/xml.png?raw=true)
+   ![alt text](https://github.com/eryanda/Book-Collection/blob/main/Pict/xml_by_id.png?raw=true)
+
+ - Menghubungkan model Item dengan User.
+
+   a. Untuk menghubungkan model ke user, pertama melakukan import di bawah ini
+
+   ```python
+   from django.contrib.auth.models import User
+   ```
+   b. Selanjutnya menambahkan potongan kode ini di berkas models.py
+
+   ```python
+   class Product(models.Model):
+      user = models.ForeignKey(User, on_delete=models.CASCADE)
+   ```
+
+   c. Mengubah dua fungsi di berkas views.py seperti di bawah ini
+
+   ```python
+   def show_main(request):
+    products = Product.objects.filter(user=request.user)
+    context = {
+        'name': request.user.username,
+        'class' : "PBP B",
+        'products': products,
+        'last_login': request.COOKIES['last_login'],
+        'add_amount': add_amount,
+        'sub_amount': sub_amount,
+    }
+
+    return render(request, "main.html", context)
+
+   def create_product(request):
+      form = ProductForm(request.POST or None)
+
+      if form.is_valid() and request.method == "POST":
+         product = form.save(commit=False)
+         product.user = request.user
+         product.save()
+         return HttpResponseRedirect(reverse('main:show_main'))
+
+      context = {'form': form}
+      return render(request, "create_product.html", context)
+   ```
+   d. Dan yang terakhir adalah menjalankan 2 perintah di bawah ini:
+   - python manage.py makemigrations --> pencet 1 + enter + 1 + enter jika terjadi error saat menjalankan perintah ini
+   - python manage.py migrate
+
+ - Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi.
