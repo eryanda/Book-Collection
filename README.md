@@ -287,17 +287,17 @@ Checklist untuk tugas ini adalah sebagai berikut:
 
    - Kelebihan dari **Django UserCreationForm** antara lain:
 
-   a. **Mudah digunakan**: Formulir ini telah disediakan oleh Django dan dapat digunakan langsung tanpa perlu menulis kode tambahan.
+      a. **Mudah digunakan**: Formulir ini telah disediakan oleh Django dan dapat digunakan langsung tanpa perlu menulis kode tambahan.
 
-   b. **Validasi otomatis**: Formulir ini secara otomatis memvalidasi input pengguna, seperti memastikan kata sandi yang dimasukkan cukup kuat dan memeriksa apakah nama pengguna sudah digunakan sebelumnya.
+      b. **Validasi otomatis**: Formulir ini secara otomatis memvalidasi input pengguna, seperti memastikan kata sandi yang dimasukkan cukup kuat dan memeriksa apakah nama pengguna sudah digunakan sebelumnya.
 
-   c. **Integrasi dengan Django**: Formulir ini terintegrasi dengan baik dengan fitur otentikasi dan otorisasi Django, sehingga memudahkan pengembangan aplikasi web yang aman dan terpercaya.
+      c. **Integrasi dengan Django**: Formulir ini terintegrasi dengan baik dengan fitur otentikasi dan otorisasi Django, sehingga memudahkan pengembangan aplikasi web yang aman dan terpercaya.
 
    - Namun, **Django UserCreationForm** juga memiliki beberapa kekurangan, antara lain:
 
-   a. **Keterbatasan fungsionalitas**: Formulir ini hanya menyediakan fitur dasar untuk pembuatan pengguna baru. Jika Anda membutuhkan fungsionalitas tambahan, seperti mengumpulkan informasi tambahan dari pengguna, Anda perlu menyesuaikan formulir ini atau membuat formulir kustom.
+      a. **Keterbatasan fungsionalitas**: Formulir ini hanya menyediakan fitur dasar untuk pembuatan pengguna baru. Jika Anda membutuhkan fungsionalitas tambahan, seperti mengumpulkan informasi tambahan dari pengguna, Anda perlu menyesuaikan formulir ini atau membuat formulir kustom.
 
-   b. **Tampilan bawaan yang sederhana**: Formulir ini tidak menyediakan tampilan yang sangat menarik secara default. Jika Anda menginginkan tampilan yang lebih menarik, Anda perlu menyesuaikan tampilan formulir menggunakan HTML dan CSS.
+      b. **Tampilan bawaan yang sederhana**: Formulir ini tidak menyediakan tampilan yang sangat menarik secara default. Jika Anda menginginkan tampilan yang lebih menarik, Anda perlu menyesuaikan tampilan formulir menggunakan HTML dan CSS.
 
  2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
 
@@ -305,9 +305,9 @@ Checklist untuk tugas ini adalah sebagai berikut:
 
    - Kedua konsep ini penting dalam Django karena:
 
-   a. **Autentikasi** memastikan bahwa hanya pengguna yang sah yang dapat mengakses sistem. Ini membantu melindungi data dan mencegah akses yang tidak sah.
+      a. **Autentikasi** memastikan bahwa hanya pengguna yang sah yang dapat mengakses sistem. Ini membantu melindungi data dan mencegah akses yang tidak sah.
 
-   b. **Otorisasi** memastikan bahwa pengguna hanya dapat melakukan tindakan yang sesuai dengan peran dan izin mereka. Ini membantu menjaga keamanan dan integritas sistem dengan membatasi akses ke sumber daya yang sensitif.
+      b. **Otorisasi** memastikan bahwa pengguna hanya dapat melakukan tindakan yang sesuai dengan peran dan izin mereka. Ini membantu menjaga keamanan dan integritas sistem dengan membatasi akses ke sumber daya yang sensitif.
 
    - Dalam kombinasi, autentikasi dan otorisasi membantu menjaga keamanan dan privasi pengguna, serta mencegah penyalahgunaan dan kerusakan pada sistem aplikasi.
 
@@ -373,8 +373,8 @@ Checklist untuk tugas ini adalah sebagai berikut:
    ```
  - Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun di lokal.
 
-   ![alt text](https://github.com/eryanda/Book-Collection/blob/main/Pict/xml.png?raw=true)
-   ![alt text](https://github.com/eryanda/Book-Collection/blob/main/Pict/xml_by_id.png?raw=true)
+   ![alt text](https://github.com/eryanda/Book-Collection/blob/main/Pict/bookCollection_1.png?raw=true)
+   ![alt text](https://github.com/eryanda/Book-Collection/blob/main/Pict/bookCollection_2.png?raw=true)
 
  - Menghubungkan model Item dengan User.
 
@@ -423,3 +423,46 @@ Checklist untuk tugas ini adalah sebagai berikut:
    - python manage.py migrate
 
  - Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi.
+
+   a. Mengimport kode di bawah ini ke berkas views.py
+   ```python
+   import datetime
+   from django.http import HttpResponseRedirect
+   from django.urls import reverse
+   ```
+
+   b. Memodifikasi fungsi login_user seperti di bawah ini pada berkas views.py
+   ```python
+   def login_user(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            response = HttpResponseRedirect(reverse("main:show_main")) 
+            response.set_cookie('last_login', str(datetime.datetime.now()))
+            return response
+        else:
+            messages.info(request, 'Lu salah masukin password sama username kawan')
+    context = {}
+    return render(request, 'login.html', context)
+   ```
+
+   c. Menambahkan kode di bawah ini pada fungsi show_main pada berkas views.py
+   ```python
+   'last_login': request.COOKIES['last_login'],
+   ```
+
+   d. Mengubah fungsi logout_user seperti di bawah ini pada berkas views.py
+   ```python
+   'last_login': request.COOKIES['last_login'],
+   ```
+   
+   e. Menambahkan potongan kode di bawah ini pada berkas main.html
+   ```html
+   <h5>Sesi terakhir login: {{ last_login }}</h5>
+   ```
+
+   f. Berikut tampilan detailnya
+   ![alt text](https://github.com/eryanda/Book-Collection/blob/main/Pict/bookCollection_3.png?raw=true)
