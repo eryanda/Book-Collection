@@ -101,7 +101,7 @@ sequenceDiagram
 - Server ->> urls.py: Mengambil URL yang sesuai dengan request
 - urls.py ->> views.py: Menjalankan fungsi view yang sesuai
 - views.py ->> models.py: Mengakses data dari model
-- views.py ->> berkas html: Menghasilkan output HTML
+- views.py ->> berkas html: Menghasilkan output HTML-
 - Server ->> Client: HTTP response
 
    Penjelasan:
@@ -466,3 +466,108 @@ Checklist untuk tugas ini adalah sebagai berikut:
 
    f. Berikut tampilan detailnya
    ![alt text](https://github.com/eryanda/Book-Collection/blob/main/Pict/bookCollection_3.png?raw=true)
+
+
+
+**TUGAS 5**   
+
+Checklist untuk tugas ini adalah sebagai berikut:
+
+ v Kustomisasi desain pada templat HTML yang telah dibuat pada Tugas 4 dengan menggunakan CSS atau CSS framework (seperti Bootstrap, Tailwind, Bulma) dengan ketentuan sebagai berikut:
+
+
+ v Kustomisasi halaman login, register, dan tambah inventori semenarik mungkin.
+
+ v Kustomisasi halaman daftar inventori menjadi lebih berwarna maupun menggunakan apporach lain seperti menggunakan Card.
+
+ 
+ v Menjawab beberapa pertanyaan berikut pada README.md pada root folder (silakan modifikasi README.md yang telah kamu buat sebelumnya; tambahkan subjudul untuk setiap tugas).
+
+ - Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+
+   Selektor CSS adalah pola yang digunakan untuk memilih elemen HTML yang ingin diberikan gaya (style) ¹³. Berikut adalah beberapa jenis selektor CSS dan manfaatnya:
+
+      - **Selektor Tag**: Selektor ini memilih elemen berdasarkan nama tag. Manfaatnya adalah mempermudah pemilihan elemen yang sama jenisnya.
+      - **Selektor Class**: Selektor ini memilih elemen berdasarkan nama class yang diberikan. Manfaatnya adalah mempermudah pemilihan elemen yang memiliki class yang sama.
+      - **Selektor ID**: Selektor ini memilih elemen berdasarkan ID yang diberikan. Manfaatnya adalah mempermudah pemilihan elemen yang memiliki ID yang sama.
+      - **Selektor Atribut**: Selektor ini memilih elemen berdasarkan atribut yang dimiliki. Manfaatnya adalah mempermudah pemilihan elemen yang memiliki atribut yang sama.
+      - **Selektor Universal**: Selektor ini memilih semua elemen pada jangkauan (scope) tertentu. Manfaatnya adalah mempermudah pemilihan semua elemen pada halaman web.
+      - **Selektor Pseudo**: Selektor ini memilih elemen semu seperti state pada elemen, elemen before dan after, elemen ganjil, dan sebagainya. Manfaatnya adalah mempermudah pemilihan elemen yang memiliki state atau kondisi tertentu.
+
+      Waktu yang tepat untuk menggunakan setiap selektor tergantung pada kebutuhan proyek dan preferensi pengembang. Sebaiknya gunakan selektor tag untuk memilih elemen yang sama jenisnya, selektor class untuk memilih elemen yang memiliki class yang sama, selektor ID untuk memilih elemen yang memiliki ID yang sama, selektor atribut untuk memilih elemen yang memiliki atribut yang sama, selektor universal untuk memilih semua elemen pada halaman web, dan selektor pseudo untuk memilih elemen yang memiliki state atau kondisi tertentu ¹.
+
+ - Jelaskan HTML5 Tag yang kamu ketahui.
+   <head>: Mendefinisikan informasi kepala dokumen.
+   <title>: Mendefinisikan judul dokumen.
+   <body>: Mendefinisikan isi dokumen.
+   <h1> hingga <h6>: Mendefinisikan judul.
+   <p>: Mendefinisikan paragraf.
+
+ - Jelaskan perbedaan antara margin dan padding.
+
+   Margin dan padding adalah dua konsep penting dalam CSS. Margin adalah ruang di luar elemen, sedangkan padding adalah ruang di dalam elemen. Perbedaan antara margin dan padding adalah sebagai berikut:
+
+   1. **Posisi relatif terhadap elemen terdekat**: Margin menciptakan ruang kosong di luar elemen, sementara padding menciptakan ruang kosong di dalam elemen.
+
+   2. **Pengaruh pada ukuran elemen**: Margin tidak mempengaruhi ukuran elemen itu sendiri, sementara padding dapat memperbesar ukuran elemen.
+
+   3. **Nilai default**: Nilai default untuk margin adalah 0, sedangkan nilai default untuk padding adalah none.
+
+   4. **Pengaruh pada tata letak**: Margin digunakan untuk mengontrol tata letak elemen pada halaman, seperti mengatur jarak antar elemen yang berdekatan, sedangkan padding digunakan untuk menambah ruang internal suatu elemen.
+
+   5. **Jumlah nilai yang dapat ditentukan**: Margin dapat memiliki empat nilai yang berbeda (atas, bawah, kiri, dan kanan), sedangkan padding juga dapat memiliki empat nilai yang berbeda (atas, bawah, kiri, dan kanan).
+
+ - Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+
+   Bootstrap dan Tailwind adalah dua kerangka kerja CSS yang populer digunakan dalam pengembangan web. Meskipun keduanya bertujuan untuk membantu membangun antarmuka yang responsif dan menarik, mereka memiliki pendekatan dan fitur yang berbeda.
+
+   Berikut adalah perbandingan antara Bootstrap dan Tailwind:
+
+   - **Desain**: Bootstrap menawarkan set class CSS dan komponen yang telah dirancang sebelumnya dengan tampilan yang cukup terstruktur dan konsisten. Ini cocok untuk proyek dengan desain tradisional yang membutuhkan kerangka kerja yang stabil dan mudah digunakan. Tailwind menganut pendekatan yang lebih "utility-first", di mana kita membangun antarmuka dengan menggabungkan class utilitas yang lebih kecil. Ini memberikan kebebasan kreatif yang lebih besar dan memungkinkan penggunaan class yang sangat spesifik.
+
+   - **Fleksibilitas**: Bootstrap menawarkan kerangka kerja yang relatif terstruktur dengan banyak komponen yang telah dirancang sebelumnya. Ini memberikan stabilitas dan kemudahan penggunaan, tetapi mungkin memiliki batasan dalam hal fleksibilitas desain yang unik. Tailwind memberikan fleksibilitas yang lebih besar dengan pendekatan "utility-first" yang memungkinkan kita membangun desain yang sangat kustom sesuai kebutuhan. kita memiliki kendali penuh atas gaya dan tata letak dengan kombinasi class utilitas yang spesifik.
+
+   - **Ukuran file**: Bootstrap adalah kerangka kerja yang lebih besar dalam hal ukuran file karena menyediakan banyak fitur dan komponen yang siap pakai. Ini mungkin berdampak pada kecepatan pengunduhan dan performa halaman web. Tailwind dirancang untuk lebih ringan dalam hal ukuran file. Namun, ketika kita menggunakan banyak class utilitas dalam kode, ukuran file CSS dapat meningkat.
+
+   - **Ekosistem pengembangan**: Bootstrap memiliki ekosistem yang sangat kuat dengan dokumentasi yang kaya, banyak tema dan template yang tersedia, serta dukungan komunitas yang luas. Ini membuatnya mudah untuk memulai dan mendapatkan sumber daya yang diperlukan. Tailwind juga memiliki ekosistem yang berkembang pesat dengan dokumentasi yang baik dan komunitas yang aktif, kita dapat menemukan banyak sumber daya, plugin, dan integrasi dengan kerangka kerja JavaScript seperti React atau Vue.
+
+   Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya? Pilihan antara keduanya tergantung pada kebutuhan proyek, preferensi desain, dan tingkat fleksibilitas yang diinginkan. Jika proyek Anda membutuhkan kerangka kerja yang stabil dan mudah digunakan, Bootstrap mungkin menjadi pilihan yang lebih baik. Jika Anda ingin membangun antarmuka yang sangat kustom dan fleksibel, Tailwind mungkin menjadi pilihan yang lebih baik.
+
+ - Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+   
+   Untuk mengimplementasikan kustomisasi desain pada templat HTML dengan menggunakan CSS, berikut langkah-langkahnya:
+
+**Langkah 1: Persiapkan Template HTML**
+- Mulai dengan template HTML yang sudah ada. Pastikan memiliki template untuk halaman login, register, dan daftar inventori yang ingin dikustomisasi.
+
+**Langkah 2: Tambahkan Kode CSS**
+- Di dalam setiap halaman HTML yang ingin dikustomisasi, tambahkan kode CSS di bagian `<style>` di antara tag `<head> </head>`. Dapat juga menambahkan aturan CSS yang sesuai dengan kustomisasi yang diinginkan. Contoh:
+
+```html
+<style>
+    /* Aturan CSS */
+    body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+    /* Dapat juga menambahkan aturan CSS lainnya */
+</style>
+```
+
+**Langkah 3: Terapkan Kode CSS pada Element HTML**
+- Selanjutnya, perlu menerapkan aturan CSS yang telah ditambahkan ke elemen HTML yang sesuai. Dapat juga menggunakan class atau id untuk mengidentifikasi elemen yang ingin Anda kustomisasi. Contoh:
+
+```html
+<div class="login">
+    <!-- Isi dari halaman login -->
+</div>
+```
+
+**Langkah 4: Uji Tampilan**
+- Simpan perubahan yang Anda buat pada template HTML dan refresh halaman di browser. Dapat dilihat bahwa desain halaman login, register, atau daftar inventori sekarang mengikuti kustomisasi yang telah kita tentukan.
+
+**Langkah 5: Uji Semua Halaman**
+- Terakhir, pastikan uji semua halaman yang telah dikustomisasi untuk memastikan tampilan dan fungsionalitasnya berfungsi dengan baik.
+

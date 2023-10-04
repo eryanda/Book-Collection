@@ -8,6 +8,7 @@ from main.views import register #sesuaikan dengan nama fungsi yang dibuat
 from main.views import login_user #sesuaikan dengan nama fungsi yang dibuat
 from main.views import logout_user
 from main.views import add_amount, sub_amount, delete_product
+from main.views import edit_product
 app_name = 'main'
 
 urlpatterns = [
@@ -23,4 +24,5 @@ urlpatterns = [
     path('add_amount/<int:id>/', add_amount, name = 'add_amount'),
     path('sub_amount/<int:id>/', sub_amount, name = 'sub_amount'),
     path('delete_product/<int:id>/', delete_product, name = 'delete_product'),
+    path('edit-product/<int:id>', edit_product, name='edit_product'),
 ]

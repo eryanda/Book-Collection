@@ -74,7 +74,12 @@
         .bold {
             font-weight: bold;
         }
+
+        table tr:last-child {
+        background-color: #ffeeaa; /* Ganti dengan warna yang Anda inginkan */
+        }
     </style>
+
 </head>
 <body>
     <header>
@@ -112,6 +117,11 @@
                         {% csrf_token %}
                         <button type="submit">Hapus</button>
                     </form>
+                    <a href="{% url 'main:edit_product' product.pk %}">
+                        <button>
+                            Edit
+                        </button>
+                    </a>
                 </td>
             </tr>
             {% endfor %}
