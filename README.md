@@ -480,12 +480,11 @@ Checklist untuk tugas ini adalah sebagai berikut:
 
  v Kustomisasi halaman daftar inventori menjadi lebih berwarna maupun menggunakan apporach lain seperti menggunakan Card.
 
- 
  v Menjawab beberapa pertanyaan berikut pada README.md pada root folder (silakan modifikasi README.md yang telah kamu buat sebelumnya; tambahkan subjudul untuk setiap tugas).
 
  - Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
 
-   Selektor CSS adalah pola yang digunakan untuk memilih elemen HTML yang ingin diberikan gaya (style) ¹³. Berikut adalah beberapa jenis selektor CSS dan manfaatnya:
+   Selektor CSS adalah pola yang digunakan untuk memilih elemen HTML yang ingin diberikan gaya (style). Berikut adalah beberapa jenis selektor CSS dan manfaatnya:
 
       - **Selektor Tag**: Selektor ini memilih elemen berdasarkan nama tag. Manfaatnya adalah mempermudah pemilihan elemen yang sama jenisnya.
       - **Selektor Class**: Selektor ini memilih elemen berdasarkan nama class yang diberikan. Manfaatnya adalah mempermudah pemilihan elemen yang memiliki class yang sama.
@@ -494,14 +493,16 @@ Checklist untuk tugas ini adalah sebagai berikut:
       - **Selektor Universal**: Selektor ini memilih semua elemen pada jangkauan (scope) tertentu. Manfaatnya adalah mempermudah pemilihan semua elemen pada halaman web.
       - **Selektor Pseudo**: Selektor ini memilih elemen semu seperti state pada elemen, elemen before dan after, elemen ganjil, dan sebagainya. Manfaatnya adalah mempermudah pemilihan elemen yang memiliki state atau kondisi tertentu.
 
-      Waktu yang tepat untuk menggunakan setiap selektor tergantung pada kebutuhan proyek dan preferensi pengembang. Sebaiknya gunakan selektor tag untuk memilih elemen yang sama jenisnya, selektor class untuk memilih elemen yang memiliki class yang sama, selektor ID untuk memilih elemen yang memiliki ID yang sama, selektor atribut untuk memilih elemen yang memiliki atribut yang sama, selektor universal untuk memilih semua elemen pada halaman web, dan selektor pseudo untuk memilih elemen yang memiliki state atau kondisi tertentu ¹.
+      Waktu yang tepat untuk menggunakan setiap selektor tergantung pada kebutuhan proyek dan preferensi pengembang. Sebaiknya gunakan selektor tag untuk memilih elemen yang sama jenisnya, selektor class untuk memilih elemen yang memiliki class yang sama, selektor ID untuk memilih elemen yang memiliki ID yang sama, selektor atribut untuk memilih elemen yang memiliki atribut yang sama, selektor universal untuk memilih semua elemen pada halaman web, dan selektor pseudo untuk memilih elemen yang memiliki state atau kondisi tertentu.
 
  - Jelaskan HTML5 Tag yang kamu ketahui.
+   ```html
    <head>: Mendefinisikan informasi kepala dokumen.
    <title>: Mendefinisikan judul dokumen.
    <body>: Mendefinisikan isi dokumen.
    <h1> hingga <h6>: Mendefinisikan judul.
    <p>: Mendefinisikan paragraf.
+   ```
 
  - Jelaskan perbedaan antara margin dan padding.
 
