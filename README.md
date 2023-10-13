@@ -572,3 +572,42 @@ Checklist untuk tugas ini adalah sebagai berikut:
 **Langkah 5: Uji Semua Halaman**
 - Terakhir, pastikan uji semua halaman yang telah dikustomisasi untuk memastikan tampilan dan fungsionalitasnya berfungsi dengan baik.
 
+**Tugas 6**
+
+1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+
+Asynchronous programming dan synchronous programming adalah dua teknik pemrograman yang berbeda dalam cara mereka menangani tugas-tugas yang diberikan. Synchronous programming adalah pendekatan pemrograman tradisional di mana tugas-tugas dieksekusi secara berurutan (satu demi satu). Sebaliknya, asynchronous programming memungkinkan beberapa tugas dieksekusi secara bersamaan tanpa memblokir utas utama atau antarmuka pengguna. 
+
+Perbedaan lainnya antara asynchronous dan synchronous meliputi:
+- Asynchronous adalah multi-thread, yang berarti operasi atau program dapat berjalan secara paralel. Synchronous adalah single-thread, sehingga hanya satu operasi atau program yang akan berjalan pada satu waktu.
+- Asynchronous adalah non-blocking, yang berarti akan mengirimkan beberapa permintaan ke server. Synchronous adalah blocking, yang berarti akan menunggu sampai permintaan sebelumnya selesai sebelum mengirimkan permintaan baru.
+
+2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+
+Paradigma event-driven programming adalah pendekatan pemrograman di mana alur program ditentukan oleh kejadian yang terjadi. Ini berarti program menunggu kejadian terjadi sebelum melanjutkan eksekusi. Pendekatan ini memungkinkan program yang lebih responsif karena tidak perlu terus-menerus menjalankan kode.
+
+Pada JavaScript dan AJAX, event-driven programming digunakan untuk menangani permintaan asinkron. Ketika pengguna melakukan tindakan seperti mengklik tombol, program akan menghasilkan event yang akan memicu permintaan asinkron ke server. Setelah server merespon, program akan menghasilkan event lain yang akan memicu pemrosesan data yang diterima dari server.
+
+Contoh penerapannya pada tugas ini adalah ketika pengguna melakukan klik pada tombol "add" pada halaman web, maka program akan menangani kejadian tersebut dan mengirimkan data ke server menggunakan AJAX.
+
+3. Jelaskan penerapan asynchronous programming pada AJAX.
+
+Pada AJAX, asynchronous programming digunakan untuk memproses permintaan asinkron ke server. Dalam asynchronous programming, program akan mengirimkan beberapa permintaan ke server tanpa memblokir utas utama atau antarmuka pengguna. 
+
+Dalam penerapan AJAX, ketika pengguna melakukan tindakan seperti mengklik tombol, program akan menghasilkan event yang akan memicu permintaan asinkron ke server. Setelah server merespon, program akan menghasilkan event lain yang akan memicu pemrosesan data yang diterima dari server.
+
+4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+
+Fetch API dan jQuery adalah dua teknologi yang digunakan untuk memproses permintaan asinkron ke server dalam penerapan AJAX. 
+
+Fetch API adalah API JavaScript yang memungkinkan pengiriman permintaan HTTP dan menerima respons dari server. Fetch API lebih modern dan lebih ringan daripada jQuery, karena tidak memerlukan dependensi tambahan dan memiliki sintaks yang lebih mudah dipahami ¹. 
+
+Di sisi lain, jQuery adalah library JavaScript yang menyediakan banyak fitur, termasuk AJAX. jQuery memiliki sintaks yang lebih pendek dan mudah digunakan daripada Fetch API ². Namun, karena jQuery memiliki banyak fitur, ukuran file JavaScript-nya lebih besar daripada Fetch API ³.
+
+Dalam hal kinerja, Fetch API cenderung lebih cepat daripada jQuery karena ukuran file JavaScript-nya yang lebih kecil ³. Namun, jika Anda memerlukan banyak fitur seperti animasi atau manipulasi DOM, maka jQuery mungkin menjadi pilihan yang lebih baik.
+
+Secara keseluruhan, jika Anda hanya memerlukan fitur AJAX dasar, maka Fetch API adalah pilihan yang lebih baik karena ukuran file JavaScript-nya yang lebih kecil dan sintaks yang mudah dipahami. Namun, jika Anda memerlukan banyak fitur tambahan seperti animasi atau manipulasi DOM, maka jQuery mungkin menjadi pilihan yang lebih baik.
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+6.  Melakukan deployment ke PaaS PBP Fasilkom UI dan sertakan tautan aplikasi pada file README.md.

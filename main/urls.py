@@ -9,6 +9,7 @@ from main.views import login_user #sesuaikan dengan nama fungsi yang dibuat
 from main.views import logout_user
 from main.views import add_amount, sub_amount, delete_product
 from main.views import edit_product
+from main.views import get_product_json,add_product_ajax
 app_name = 'main'
 
 urlpatterns = [
@@ -25,4 +26,6 @@ urlpatterns = [
     path('sub_amount/<int:id>/', sub_amount, name = 'sub_amount'),
     path('delete_product/<int:id>/', delete_product, name = 'delete_product'),
     path('edit-product/<int:id>', edit_product, name='edit_product'),
+    path('get-product/', get_product_json, name='get_product_json'),
+    path('create-product-ajax/', add_product_ajax, name='add_product_ajax')
 ]

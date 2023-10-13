@@ -76,9 +76,102 @@
         }
 
         table tr:last-child {
-        background-color: #ffeeaa; /* Ganti dengan warna yang Anda inginkan */
+        background-color: #00c92f; /* Ganti dengan warna yang Anda inginkan */
         }
+
+    /* Gaya kartu (card) */
+    .card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        margin: 10px; /* Mengatur jarak antar kartu */
+        width: calc(33.33% - 20px);
+        display: inline-block;
+        vertical-align: top;
+        box-sizing: border-box;
+    }
+
+    .card h3 {
+        font-size: 18px;
+        margin: 0 0 10px;
+    }
+
+    .card p {
+        margin: 0 0 10px;
+    }
+
+    .card-actions {
+    margin-top: 10px;
+    }
+
+    .card-buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .card-buttons button {
+        flex: 1;
+        padding: 8px 0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .card-buttons button.add {
+        background-color: #007bff;
+        color: #fff;
+        margin-right: 5px;
+    }
+
+    .card-buttons button.delete {
+        background-color: #ff0000;
+        color: #fff;
+    }
+
     </style>
+
+    <script>
+        async function getProducts() {
+            return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+        }
+
+        async function refreshProducts() {
+        document.getElementById("product_table").innerHTML = ""
+        const products = await getProducts()
+        let htmlString = `<tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Date Added</th>
+        </tr>`
+        products.forEach((item) => {
+            htmlString += `\n<tr>
+            <td>${item.fields.name}</td>
+            <td>${item.fields.price}</td>
+            <td>${item.fields.description}</td>
+            <td>${item.fields.date_added}</td>
+        </tr>` 
+        })
+        
+        document.getElementById("product_table").innerHTML = htmlString
+    }
+
+    refreshProducts()
+
+    function addProduct() {
+        fetch("{% url 'main:add_product_ajax' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshProducts)
+
+        document.getElementById("form").reset()
+        return false
+    }
+
+    document.getElementById("button_add").onclick = addProduct
+    </script>
 
 </head>
 <body>
@@ -90,47 +183,45 @@
             Kamu menyimpan {{ products|length }} jenis item pada aplikasi ini.
         </div>
         <p><span class="bold">Name:</span> {{ name }}</p>
-        <table>
-            <tr>
-                <th>Genre</th>
-                <th>Title</th>
-                <th>Amount</th>
-                <th>Description</th>
-                <th>Actions</th> <!-- Menambah kolom untuk tombol aksi -->
-            </tr>
+
+        <div class="card-container">
             {% for product in products %}
-            <tr>
-                <td>{{ product.genre }}</td>
-                <td>{{ product.title }}</td>
-                <td>{{ product.amount }}</td>
-                <td>{{ product.description }}</td>
-                <td>
-                    <form method="post" action="{% url 'main:add_amount' product.id %}">
-                        {% csrf_token %}
-                        <button type="submit">Tambah</button>
-                    </form>
-                    <form method="post" action="{% url 'main:sub_amount' product.id %}">
-                        {% csrf_token %}
-                        <button type="submit">Kurang</button>
-                    </form>
-                    <form method="post" action="{% url 'main:delete_product' product.id %}">
-                        {% csrf_token %}
-                        <button type="submit">Hapus</button>
-                    </form>
-                    <a href="{% url 'main:edit_product' product.pk %}">
-                        <button>
-                            Edit
-                        </button>
-                    </a>
-                </td>
-            </tr>
+                <div class="card{% if forloop.last %} last-card{% endif %}">
+                    <h3>{{ product.title }}</h3>
+                    <p><strong>Genre:</strong> {{ product.genre }}</p>
+                    <p><strong>Amount:</strong> {{ product.amount }}</p>
+                    <p><strong>Description:</strong> {{ product.description }}</p>
+                    <div class="card-actions">
+                        <div class="card-buttons">
+                            <form method="post" action="{% url 'main:add_amount' product.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="add">Tambah</button>
+                            </form>
+                            <form method="post" action="{% url 'main:sub_amount' product.id %}">
+                                {% csrf_token %}
+                                <button type="submit">Kurang</button>
+                            </form>
+                        </div>
+                        <div class="card-buttons">
+                            <form method="post" action="{% url 'main:delete_product' product.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="delete">Hapus</button>
+                            </form>
+                            <a href="{% url 'main:edit_product' product.pk %}">
+                                <button class="add">Edit</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             {% endfor %}
-            
-        </table>
+        </div>
+        
+        
+        
         <h5>Sesi terakhir login: {{ last_login }}</h5>
         <div class="button">
             <a href="{% url 'main:create_product' %}">
-                <button>Add New Product</button>
+                <button>Add New Product By Ajax</button>
             </a>
             <a href="{% url 'main:logout' %}">
                 <button>Logout</button>
