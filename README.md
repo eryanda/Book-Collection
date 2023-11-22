@@ -598,13 +598,8 @@ Dalam penerapan AJAX, ketika pengguna melakukan tindakan seperti mengklik tombol
 
 4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
 
-Fetch API dan jQuery adalah dua teknologi yang digunakan untuk memproses permintaan asinkron ke server dalam penerapan AJAX. 
-
-Fetch API adalah API JavaScript yang memungkinkan pengiriman permintaan HTTP dan menerima respons dari server. Fetch API lebih modern dan lebih ringan daripada jQuery, karena tidak memerlukan dependensi tambahan dan memiliki sintaks yang lebih mudah dipahami ¹. 
-
-Di sisi lain, jQuery adalah library JavaScript yang menyediakan banyak fitur, termasuk AJAX. jQuery memiliki sintaks yang lebih pendek dan mudah digunakan daripada Fetch API ². Namun, karena jQuery memiliki banyak fitur, ukuran file JavaScript-nya lebih besar daripada Fetch API ³.
-
-Dalam hal kinerja, Fetch API cenderung lebih cepat daripada jQuery karena ukuran file JavaScript-nya yang lebih kecil ³. Namun, jika Anda memerlukan banyak fitur seperti animasi atau manipulasi DOM, maka jQuery mungkin menjadi pilihan yang lebih baik.
+   Fetch API dan jQuery adalah dua teknologi yang digunakan untuk memproses permintaan asinkron ke server dalam penerapan AJAX. Fetch API adalah API JavaScript yang memungkinkan pengiriman permintaan HTTP dan menerima respons dari server. Fetch API lebih modern dan lebih ringan daripada jQuery, karena tidak memerlukan dependensi tambahan dan memiliki sintaks yang lebih mudah dipahami. 
+   Di sisi lain, jQuery adalah library JavaScript yang menyediakan banyak fitur, termasuk AJAX. jQuery memiliki sintaks yang lebih pendek dan mudah digunakan daripada Fetch API . Namun, karena jQuery memiliki banyak fitur, ukuran file JavaScript-nya lebih besar daripada Fetch API .Dalam hal kinerja, Fetch API cenderung lebih cepat daripada jQuery karena ukuran file JavaScript-nya yang lebih kecil. Namun, jika Anda memerlukan banyak fitur seperti animasi atau manipulasi DOM, maka jQuery mungkin menjadi pilihan yang lebih baik.
 
 Secara keseluruhan, jika Anda hanya memerlukan fitur AJAX dasar, maka Fetch API adalah pilihan yang lebih baik karena ukuran file JavaScript-nya yang lebih kecil dan sintaks yang mudah dipahami. Namun, jika Anda memerlukan banyak fitur tambahan seperti animasi atau manipulasi DOM, maka jQuery mungkin menjadi pilihan yang lebih baik.
 
