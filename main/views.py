@@ -143,12 +143,13 @@ def get_product_json(request):
 @csrf_exempt
 def add_product_ajax(request):
     if request.method == 'POST':
-        name = request.POST.get("name")
-        price = request.POST.get("price")
+        title = request.POST.get("title")
+        genre = request.POST.get("genre")
+        amount = request.POST.get("amount")
         description = request.POST.get("description")
         user = request.user
 
-        new_product = Product(name=name, price=price, description=description, user=user)
+        new_product = Product(title=title, genre = genre, amount=amount, description=description, user=user)
         new_product.save()
 
         return HttpResponse(b"CREATED", status=201)

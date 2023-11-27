@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends 'base.html' %}
+
+{% block meta %}
     <title>Book Collection Page</title>
+{% endblock meta %}
+{% block content %}
     <style>
         /* Style untuk body dan header */
         body {
@@ -77,6 +77,11 @@
 
         table tr:last-child {
         background-color: #00c92f; /* Ganti dengan warna yang Anda inginkan */
+        }
+
+        table tr:last-child {
+            background-color: #4caf50; /* Warna latar untuk baris terakhir */
+            color: #ffffff; /* Warna teks untuk baris terakhir */
         }
 
     /* Gaya kartu (card) */
@@ -173,8 +178,6 @@
     document.getElementById("button_add").onclick = addProduct
     </script>
 
-</head>
-<body>
     <header>
         <h1> <span style="background-image: linear-gradient(to right, #000000, #000000, #000000, #000000, #000000); -webkit-background-clip: text; color: transparent;">Book Collection Page</span></h1>
     </header>
@@ -187,7 +190,8 @@
         <div class="card-container">
             {% for product in products %}
                 <div class="card{% if forloop.last %} last-card{% endif %}">
-                    <h3>{{ product.title }}</h3>
+                    <!-- <h3>Title : {{ product.title }}</h3> -->
+                    <p><strong>Title:</strong> {{ product.title }}</p>
                     <p><strong>Genre:</strong> {{ product.genre }}</p>
                     <p><strong>Amount:</strong> {{ product.amount }}</p>
                     <p><strong>Description:</strong> {{ product.description }}</p>
@@ -216,17 +220,94 @@
             {% endfor %}
         </div>
         
-        
-        
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form" onsubmit="return false;">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="title" class="col-form-label">Title:</label>
+                                <input type="text" class="form-control" id="title" name="title"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="genre" class="col-form-label">Genre:</label>
+                                <input type="text" class="form-control" id="genre" name="genre"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="amount" class="col-form-label">Amount:</label>
+                                <input type="number" class="form-control" id="amount" name="amount"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="description" class="col-form-label">Description:</label>
+                                <textarea class="form-control" id="description" name="description"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>    
         <h5>Sesi terakhir login: {{ last_login }}</h5>
         <div class="button">
-            <a href="{% url 'main:create_product' %}">
+            <!-- <a href="{% url 'main:create_product' %}">
                 <button>Add New Product By Ajax</button>
-            </a>
+            </a> -->
             <a href="{% url 'main:logout' %}">
                 <button>Logout</button>
             </a>
         </div>
     </div>
-</body>
-</html>
+    <script>
+        async function getProducts() {
+            return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+        }
+
+        async function refreshProducts() {
+            document.getElementById("product_table").innerHTML = ""
+            const products = await getProducts()
+            let htmlString = `<tr>
+                <th>Genre</th>
+                <th>Amount</th>
+                <th>Description</th>
+                <th>Date Added</th>
+            </tr>`
+            products.forEach((item) => {
+                htmlString += `\n<tr>
+                <td>${item.fields.title}</td>
+                <td>${item.fields.genre}</td>
+                <td>${item.fields.amount}</td>
+                <td>${item.fields.description}</td>
+                <td><a href="edit-product/${item.pk}"><button>Edit</button></a></td>
+                <td><a href="delete_product/${item.pk}"><button>Delete</button></a></td>
+            </tr>` 
+            })
+            
+            document.getElementById("product_table").innerHTML = htmlString
+        }
+
+        refreshProducts()
+
+        function addProduct() {
+            fetch("{% url 'main:add_product_ajax' %}", {
+                method: "POST",
+                body: new FormData(document.querySelector('#form'))
+            }).then(refreshProducts)
+
+            document.getElementById("form").reset()
+            return false
+        }
+
+        document.getElementById("button_add").onclick = addProduct
+    </script>  
+
+{% endblock content %}
